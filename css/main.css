@@ -1,0 +1,476 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*utility Class*/
+
+
+.hidden
+{ 
+	display: none;
+}
+
+.topBar
+{
+	background-color: #3c0017;
+}
+
+header nav ul
+{
+	margin-top: 15px;
+}
+
+header nav ul li
+{
+	float: left;
+	margin-right: 15px;
+}
+
+header nav ul li a
+{
+	color: #ffb36f;
+	font-family: 'Passion One', serif;
+	font-size: 30px;
+}
+
+header nav ul li a:hover
+{
+	color: #ee5f4a;
+}
+
+.log ul
+{
+	margin-top: 20px;
+}
+
+.log ul li
+{
+	float: left;
+	margin-right: 15px;
+}
+
+.log ul li a
+{
+	color: #FFF;
+	font-size: 15px;
+}
+
+.log ul li a:hover
+{
+	color:#ffb36f;
+}
+
+.headSearch input
+{
+	margin-top: 10px;
+	border-radius: 10px;
+}
+
+.bg
+{
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;	
+	background-size: cover;
+}
+
+.logo
+{
+	margin-top: 20%;	
+}
+
+.logo h2
+{
+	color: #FFF;
+	font-size: 20px;
+	text-decoration: underline;
+	font-family: 'Droid Serif', serif;
+}
+
+.productTitle h2
+{
+	color: #3c0017;
+	font-family: 'Passion One', serif;
+	font-size: 50px;
+	margin-top: 20px;
+}
+
+.prodbox
+{
+	background-color: #ee5f4a;
+	margin-top: 20px;
+}
+
+.prodbox img{
+	height: 50%;
+	width: 50%;
+	margin-left: 60px;
+}
+
+.prodbox h3
+{
+	color: #FFF;
+	font-family: 'Droid Serif', serif;
+	padding-top: 20px;
+	font-size: 30px;
+	text-align: center
+}
+
+.prodbox a
+{
+	color: #FFF;
+}
+
+.prodbox a:hover
+{
+	color: #3c0017;
+}
+
+.prodbox p
+{
+	color: #FFF;
+	text-align: center;
+	font-family: 'Droid Serif', serif;
+	font-size: 15px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.ciderHelp p
+{
+	margin-top: 16px;
+}
+
+.suppTitle h2
+{
+	color: #3c0017;
+	font-family: 'Passion One', serif;
+	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom: 10px;	
+}
+
+.suppilers
+{
+	text-align: center;
+}
+
+.suppilers img
+{
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.suppilers a
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+}
+
+.suppilers a:hover
+{
+	text-decoration: underline;
+}
+
+.conTitle
+{
+	margin-top: 20px;
+}
+
+.conTitle h2
+{
+	color: #3c0017;
+	font-family: 'Passion One', serif;
+	font-size: 50px;
+	margin-top: 20px;	
+}
+
+.contact label
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 10px;
+	margin-top: 10px;	
+}
+
+.questions label
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 20px;
+	margin-top: 20px;	
+}
+
+.conTitle h3
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 20px;	
+}
+
+.conTitle p
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.social img
+{
+	margin-bottom: 20px;
+}
+
+/*Products*/
+
+
+.prodImage
+{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.filterBar
+{
+	border-right: 1px solid #000;
+	padding-right: 10px;
+}
+
+.filterBar h3
+{
+	font-family: 'Droid Serif', serif;
+	color: #3c0017;
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.filterBar p
+{
+	font-family: 'Droid Serif', serif;
+	color: #3c0017;
+	font-size: 18px;
+	margin-bottom: 20px;
+	font-weight: 700;
+}
+
+.filterBar ul li
+{
+	margin-bottom: 10px;
+}
+
+.filterBar ul li a
+{
+	font-family: 'Droid Serif', serif;
+	color: #3c0017;
+}
+
+.filterBar ul li a:hover
+{
+	font-weight: 700;
+	color: #ffb36f;
+}
+
+.prodInfo h3
+{
+	font-family: 'Droid Serif', serif;
+	color: #3c0017;
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.prodInfo p
+{
+	line-height: 16px;
+	font-family: 'Droid Serif', serif;
+	color: #3c0017;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+.priceInfo h3
+{
+	color: #3c0017;
+	font-family: 'Passion One', serif;
+	font-size: 25px;
+	margin-bottom: 10px;	
+}
+
+.type h3
+{
+	font-weight: 700;
+	color:#ffb36f;
+}
+
+.prodName
+{
+	margin-top: 20px;
+}
+
+.buttEdit
+{
+	background-color: #FFF;
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	border: 1px #3c0017 solid;
+	margin-bottom: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.prodCon
+{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+/*About*/
+
+.about h2
+{
+	color: #3c0017;
+	font-family: 'Passion One', serif;
+	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.about h3
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.about p
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 5px;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+.about ul li
+{
+	list-style: circle;
+	line-height: 20px;
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	font-size: 12px;	
+}
+
+.about img
+{
+	margin-bottom: 20px;
+}
+
+/*Login*/
+
+.login
+{
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 10px;
+	border-radius: 20px;
+	margin-top: 60px;
+}
+
+.login h2
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+.login label
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 10px;	
+}
+
+.login input
+{
+	outline: none;
+}
+
+/*Account*/
+
+.account h3
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 10px;
+	font-size: 20px;
+	margin-top: 20px;		
+}
+
+.account a
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 10px;
+	font-size: 20px;
+	margin-top: 20px;		
+}
+
+.account a:hover
+{
+	color:#ffb36f;
+}
+
+.add h2
+{
+	color: #3c0017;
+	font-family: 'Passion One', serif;
+	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;	
+}
+
+.add label
+{
+	color: #3c0017;
+	font-family: 'Droid Serif', serif;
+	margin-bottom: 10px;
+	font-size: 20px;
+	margin-top: 20px;	
+}
+
+.addButt
+{
+	background-color: #FFF;
+	font-family: 'Droid Serif', serif;
+	color: #3c0017;
+	padding: 10px;
+	outline: none;
+	border: 1px solid #3c0017;
+	cursor: pointer;
+}
+
+/*Footer*/
+
+.footer
+{
+	background-color: #3c0017;
+}
+
+.footer footer
+{
+	font-family: 'Droid Serif', serif;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: #ffb36f;
+	margin-top: 20px;
+}
+
+.noMarg
+{
+	margin-top: 0px;
+}
