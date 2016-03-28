@@ -4,6 +4,8 @@
 .topBar {
   background-color: #3c0017; }
 
+header img {
+  padding: 5px; }
 header nav ul {
   margin-top: 15px; }
   header nav ul li {
