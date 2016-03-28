@@ -20,9 +20,9 @@
            </ul>
           <section class="top-bar-section">
             <ul class="right">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="product.html">Products</a></li>
-                  <li><a href="about.html">About</a></li>
+                  <li><a href="index.php">Home</a></li>
+                  <li><a href="product.php">Products</a></li>
+                  <li><a href="about.php">About</a></li>
             </ul>
           </section>
         </nav>
@@ -32,24 +32,24 @@
 
 <header class="topBar">
 	<div class="row">
-		<div class="show-for-medium-up large-1 columns">
-			<img src="images/drinky_logo.svg" alt="logo">
+		<div class="small-3 large-2 columns">
+			<img class="logoSmall" src="images/drinky_logo_word.svg" alt="logo">
 		</div>
 		<nav class="show-for-medium-up large-5 columns">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="product.html">Products</a></li>
-				<li><a href="about.html">About</a></li>								
+				<li><a href="index.php">Home</a></li>
+				<li><a href="product.php">Products</a></li>
+				<li><a href="about.php">About</a></li>								
 			</ul>	
 		</nav>
-		<div class="small-12 large-3 columns log">
+		<div class="small-9 large-3 columns log">
 			<ul>
-				<li><a href="signin.html">Sign In</a></li>
-				<li><a href="signup.html">Sign Up</a></li>
+				<li><a href="signin.php">Sign In</a></li>
+				<li><a href="signup.php">Sign Up</a></li>
 				<li><a href="">Cart (0)</a></li>
 			</ul>
 		</div>
-		<div class="small-12 large-3 columns headSearch">
+		<div class="small-12 large-2 columns headSearch">
 			<input placeholder="search"  type="search">
 		</div>
 

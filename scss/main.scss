@@ -27,6 +27,15 @@ $weight500: 500;
 $left: left;
 
 
+
+@media only screen and (max-width: 40em) { 
+
+.logoSmall{
+	padding-top: $pad15;
+}
+
+}
+
 // sass --watch scss/main.scss:css/main.css
 
 .hidden{
