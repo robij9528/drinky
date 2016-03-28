@@ -98,6 +98,7 @@ header{
 	background-image: url(../images/bg.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
+	background-attachment: fixed;
 	height: 100%;
 	background-size: cover;
 }
@@ -300,8 +301,14 @@ iframe{
 		color: $maroon;
 		font-family: $passion;
 		font-size: 25px;
-		margin-bottom: $pad10;
+		margin-bottom: $pad20;
+		padding-top: $pad10;
 	}
+}
+
+.conPad{
+	padding-top: $pad20;
+	padding-bottom: $pad20;
 }
 
 .type{
@@ -318,9 +325,10 @@ iframe{
 .buttEdit{
 	background-color: #FFF;
 	color: $maroon;
+	font-size: 11px;;
 	font-family: $droid;
 	border: 1px $maroon solid;
-	margin-bottom: $pad5;
+	margin-bottom: $pad10;
 	padding: $pad5;
 	cursor: pointer;
 }
@@ -328,6 +336,7 @@ iframe{
 .prodCon{
 	margin-top: $pad10;
 	margin-bottom: $pad20;
+	padding-top: $pad15;
 }
 
 // About
@@ -437,6 +446,28 @@ iframe{
 	cursor: pointer;
 }
 
+
+//AdminPAge
+
+.addCon{
+	ul{
+		li{
+			a{
+				float: left;
+				padding-right: $pad30;
+				font-size: $pad30;
+				font-family: $droid;
+				color: $maroon;
+				padding-top: $pad60;
+				text-align: center;
+				&:hover{
+					color: $redorange;
+				}
+			}
+		}
+	}
+}
+
 // Footer
 
 .footer{
@@ -453,4 +484,12 @@ iframe{
 
 .noMarg{
 	margin-top: 0px;
+}
+
+.footerhelp{
+	position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: .4rem;
 }

@@ -1,3 +1,22 @@
+<?php
+
+require_once('admin/includes/init.php');
+
+if (isset($_POST['submit'])) {
+	$username = trim($_POST['username']);
+	$password = trim($_POST['password']);
+	if($username !="" && $password !="") {
+		$log_res = logIn($username, $password);
+		$message = $log_res;
+	}
+}else{
+	$message = "plaese fill in the required fields";
+}
+
+
+ ?>
+
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -60,14 +79,17 @@
 <section data-interchange="[images/bg_mobile.jpg, (default)], [images/bg.jpg, (large)]" class="bg">
 	<h2 class="hidden">Front Image</h2>
 	<div class="row">
-		<div class="small-12 large-7 columns login">
+		<?php if (!empty($message))
+			{ echo $message;} 
+		?>
+		<form action="signin.php" method="post" class="small-12 large-7 columns login">
 			<h2>Login</h2>
 			<label>Username</label>
 			<input type="text" name="username" value="username">
 			<label>Password</label>
-			<input type="text" name="password" value="password">
-			<input type="button" value="Go" class="buttEdit">
-		</div>
+			<input type="password" name="password" value="password">
+			<input name="submit" type="submit" value="Submit" class="buttEdit">
+		</form>
 	</div>
 </section>
 

@@ -1,3 +1,12 @@
+<?php 
+require_once('admin/includes/init.php');
+$tbl = "tbl_drink";
+$getDrink = getAll($tbl);
+
+
+ ?>
+
+
 <html>
 <head>
 <meta charset="utf-8">	
@@ -76,79 +85,52 @@
 				</ul>	
 			</div>
 			<!-- Content -->
-			<div class="small-12 large-9 columns prodCon" data-equalizer-watch>
 
-				<div class="small-2 large-3 columns prodImage">
-					<img src="images/beer.png" alt="image of beer">
-				</div>
+		<div class="small-12 large-9 columns prodCon" data-equalizer-watch>
 
-				<div class="small-9 large-6 columns prodInfo">
-					<h3 class="prodName">Highlander Brew Co. Lion Grass</h3>
-					<p>650 ml bottle</p>
-					<p>12 Bottles Per Case</p>				
-					<p>Highlander Brew Co. Ontario</p>
-					<div class="type">
-						<h3>Beer</h3>
-					</div>
-					<h3>Flavour Profile</h3>
-					<p>Lion Grass Ale blends organic lemongrass and dandelion leaf with Cascade hops. Well-balanced leaning towards the malt side with hints of honey, a citrus dryness with a light and clean finish.</p>
-					<h3>International Bitterness Unit:<span>37</span></h3>
-					<p>“Lion Grass... is a blonde ale that has been flavoured with organic lemongrass and dandelion leaves. “Pours a cheery gold colour with a fluffy off-white head made up of tiny bubbles. Nose is very green and herbaceous with a distinct lemon ... <a href="#">More</a></p>
-				</div>
 
-				<div class="small-12 large-2 columns  priceInfo">
-					<h3>$53.10 <span>a case</span></h3>
-					<select>
-						<option>Qty</option>
-						<option>1</option>
-						<option>2</option>			
-						<option>3</option>			
-						<option>4</option>			
-						<option>5</option>											
-					</select>
-					<input class="buttEdit" type="button" value="More Info">
-					<input class="buttEdit" type="button" value="Add to Cart">	
-				</div>
+			<?php 
 
-				<div class="small-2 large-3 columns prodImage">
-					<img src="images/wine_bottle.jpg" alt="image of beer">
-				</div>
-				<!-- Wine -->
-				<div class="small-9 large-6 columns prodInfo">
-					<h3 class="prodName">Smoke &amp; Gamble 2014 Chardonnay</h3>
-					<p>750 ml bottle</p>
-					<p>12 Bottles Per Case</p>				
-					<p>Smoke &amp; Gamble Lake Erie North Shore</p>
-					<div class="type">
-						<h3>Wine</h3>
-					</div>
-					<h3>Winemaker's Notes</h3>
-					<p>The majority of the grapes were sourced from vineyards in Niagara.  Fermented in stainless steel tanks.  Aging was primarily in neutral French and American oak barrels.</p>
-					<!-- <h3>International Bitterness Unit:<span>37</span></h3> -->
-					<h3>Tasting Notes</h3>
-					<p>Pretty floral aromatics burst from the glass, which are followed by hints of vanilla and oak. Citrus and melon fruits are relevant. A clean yet kind mouth feel, beautiful acidity and a generous finish all point to enjoyment with food.</p>
-					<h3>Technical Details</h3>
-						<ul>	
-							<li>Alcohol: 13.4%</li>
-							<li>Brix: 21.4</li>
-							<li>Sugar: 3.0 g/L</li>
-						</ul>	
-					<a href="#">More</a></p>
-				</div>
+			if(!is_string($getDrink)){
+				while($row = mysqli_fetch_array($getDrink)){
+					echo "
+					<div class=\"conPad\">
+						<div class=\"small-2 large-3 columns prodImage\">
+							<img src=\"images/{$row['drink_img']}\"alt=\"{$row['drink_title']}\">
+						</div>
+						<div class=\"small-9 large-6 columns prodInfo\">
+							<h3 class=\"prodName\">{$row['drink_title']}</h3>
+							<p>{$row['drink_amount']} bottle</p>
+							<p>{$row['drink_case']}</p>
+							<p>{$row['drink_comp']}</p>
+							<div class=\"type\">
+								<h3>Beer</h3>
+							</div>
+							<p>{$row['drink_info']}</p>
+						</div>
+						<div class=\"small-12 large-2 end columns  priceInfo\">
+							<h3>{$row['drink_price']} <span>a case</span></h3>
+							<select>
+								<option>Qty</option>
+								<option>1</option>
+								<option>2</option>			
+								<option>3</option>			
+								<option>4</option>			
+								<option>5</option>											
+							</select>
+							<input class=\"buttEdit\" type=\"button\" value=\"More Info\">
+							<input class=\"buttEdit\" type=\"button\" value=\"Add to Cart\">	
+						</div>
+					</div>";
+				}
+			}else{
+				echo "{$getDrink}";
+			}
 
-				<div class="small-12 large-2 columns  priceInfo">
-					<h3>$215.47 <span>a case</span></h3>
-					<select>
-						<option>Qty</option>
-						<option>1</option>
-						<option>2</option>			
-						<option>3</option>			
-						<option>4</option>			
-						<option>5</option>											
-					</select>
-					<input class="buttEdit" type="button" value="More Info">
-					<input class="buttEdit" type="button" value="Add to Cart">	
-				</div>
+
+			 ?>
+
+
 
 			</div>
 

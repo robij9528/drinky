@@ -1,10 +1,36 @@
+<?php 
+
+require_once("includes/init.php");
+
+$tbl = "tbl_catD";
+$catQuery = getAll($tbl);
+
+if(isset($_POST['submit'])) {
+	$img = trim($_FILES['image']['name']);
+	$title = trim($_POST['product']);
+	$size = trim($_POST['bsize']);
+	$case = trim($_POST['qcase']);
+	$price = trim($_POST['price']);
+	$comp = trim($_POST['comp']);
+	$cat = trim($_POST['cat']);
+	$info = trim($_POST['info']);
+	$uploadDrink = addDrink($img, $title, $size, $case, $price, $comp, $cat, $info);
+	$message = $uploadDrink;
+}
+
+
+
+ ?>
+
+
+
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Welcome</title>
-<link rel="stylesheet" href="css/foundation.min.css"/>
-<link href="css/reset.css" rel="stylesheet" type="text/css" media="screen">
-<link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
+<link rel="stylesheet" href="../css/foundation.min.css"/>
+<link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen">
+<link href="../css/main.css" rel="stylesheet" type="text/css" media="screen">
 <link href='https://fonts.googleapis.com/css?family=Passion+One:400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 </head>
@@ -20,9 +46,9 @@
            </ul>
           <section class="top-bar-section">
             <ul class="right">
-                  <li><a href="index.php">Home</a></li>
-                  <li><a href="product.php">Products</a></li>
-                  <li><a href="about.php">About</a></li>
+                  <li><a href="../index.php">Home</a></li>
+                  <li><a href="../product.php">Products</a></li>
+                  <li><a href="../about.php">About</a></li>
             </ul>
           </section>
         </nav>
@@ -32,19 +58,19 @@
 <header class="topBar">
 	<div class="row">
 		<div class="small-3 large-2 columns">
-			<img class="logoSmall" src="images/drinky_logo_word.svg" alt="logo">
+			<img class="logoSmall" src="../images/drinky_logo_word.svg" alt="logo">
 		</div>
 		<nav class="show-for-medium-up large-5 columns">
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="product.php">Products</a></li>
-				<li><a href="about.php">About</a></li>								
+				<li><a href="../index.php">Home</a></li>
+				<li><a href="../product.php">Products</a></li>
+				<li><a href="../about.php">About</a></li>								
 			</ul>	
 		</nav>
 		<div class="small-9 large-3 columns log">
 			<ul>
-				<li><a href="signin.php">Sign In</a></li>
-				<li><a href="signup.php">Sign Up</a></li>
+				<li><a href="../signin.php">Sign In</a></li>
+				<li><a href="../signup.php">Sign Up</a></li>
 				<li><a href="">Cart (0)</a></li>
 			</ul>
 		</div>
@@ -61,7 +87,7 @@
 	<a class="small-12 large-3 columns" href="#">Sign out</a>
 </section>
 
-<section class="row add">
+<form action="add_drink.php" enctype="multipart/form-data" method="post"  class="row add">
 	<h2 class="hidden">Add Product</h2>
 	<h2>Add Product</h2>
 	<div class="small-12 large-6 columns">
@@ -84,37 +110,27 @@
 		<label>Company</label>
 		<input type="text" name="comp" placeholder="Company">	
 	</div>
-	<div class="small-12 large-6 columns">
+	<div class="small-12 large-12 columns">
 		<label>Type</label>
-		<select>
+		<select name="cat">
 			<option>Select Type</option>
-			<option>Wine</option>
-			<option>Spirits</option>
-			<option>Beer</option>
-			<option>Cider</option>
+			<?php 
+
+				while($row = mysqli_fetch_array($catQuery)){
+					echo "<option value=\"{$row['catD_id']}\">{$row['catD_name']}</option>";
+				}
+
+			 ?>
 		</select>	
 	</div>
-	<div class="small-12 large-4 columns">
-		<label>International Bitterness Unit</label>
-		<input type="text" name="bitt" placeholder="Bitterness">	
-	</div>
-	<div class="small-12 large-6 columns">
-		<label>Description</label>
-		<textarea name="description"></textarea>	
-	</div>
-	<div class="small-12 large-6  columns">
-		<label>Flavour Profile</label>
-		<textarea name="fp"></textarea>	
-	</div>
-
 	<div class="small-12 large-12 end columns">
-		<label>Other Information</label>
-		<textarea name="other"></textarea>	
+		<label>Information</label>
+		<textarea name="info"></textarea>	
 	</div>
 
-	<input class="small-12 large-3  columns addButt" type="button" value="Add Image">
-	<input class="small-12 large-3  columns addButt" type="button" value="Add Product">						
-</section>
+	<input class="small-12 large-3  columns" name="image" type="file" value="Add Image">
+	<input class="small-12 large-3  columns addButt" name="submit" type="submit" value="Add Product">						
+</form>
 
 
 
@@ -127,16 +143,16 @@
 
 
 
-<section class="footer">
+<section class="footer footerhelp">
 	
 	<footer>Drinky &copy; 2016</footer>
 
 </section>
 
 
-<script src="js/main.js"></script>	
-<script src="js/vendor/jquery.js"></script>
-<script src="js/foundation.min.js"></script>
+<script src="../js/main.js"></script>	
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
 <script>
       $(document).foundation();
 </script>

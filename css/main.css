@@ -40,6 +40,7 @@ header nav ul {
   background-image: url(../images/bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   height: 100%;
   background-size: cover; }
 
@@ -186,7 +187,12 @@ iframe {
   color: #3c0017;
   font-family: "Passion One", serif;
   font-size: 25px;
-  margin-bottom: 10px; }
+  margin-bottom: 20px;
+  padding-top: 10px; }
+
+.conPad {
+  padding-top: 20px;
+  padding-bottom: 20px; }
 
 .type h3 {
   font-weight: 700;
@@ -198,15 +204,17 @@ iframe {
 .buttEdit {
   background-color: #FFF;
   color: #3c0017;
+  font-size: 11px;
   font-family: "Droid Serif", serif;
   border: 1px #3c0017 solid;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 5px;
   cursor: pointer; }
 
 .prodCon {
   margin-top: 10px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding-top: 15px; }
 
 .about h2 {
   color: #3c0017;
@@ -288,6 +296,17 @@ iframe {
   border: 1px solid #3c0017;
   cursor: pointer; }
 
+.addCon ul li a {
+  float: left;
+  padding-right: 30px;
+  font-size: 30px;
+  font-family: "Droid Serif", serif;
+  color: #3c0017;
+  padding-top: 60px;
+  text-align: center; }
+  .addCon ul li a:hover {
+    color: #ee5f4a; }
+
 .footer {
   background-color: #3c0017; }
   .footer footer {
@@ -300,5 +319,12 @@ iframe {
 
 .noMarg {
   margin-top: 0px; }
+
+.footerhelp {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: .4rem; }
 
 /*# sourceMappingURL=main.css.map */
