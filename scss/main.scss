@@ -1,0 +1,444 @@
+@import "bourbon/bourbon";
+
+$maroon: #3c0017;
+$orange: #ffb36f;
+$redorange: #ee5f4a;
+$white: #FFF;
+$black: #000;
+
+$droid: 'Droid Serif', serif;
+$passion: 'Passion One',serif;
+$stwhite: rgba(255, 255, 255, 0.5);
+
+$pad5: 5px;
+$pad10: 10px;
+$pad15: 15px;
+$pad30: 30px;
+$pad20: 20px;
+$pad50: 50px;
+$pad60: 60px;
+
+$per20: 20%;
+$per50: 50%;
+
+$weight700: 700;
+$weight500: 500;
+
+$left: left;
+
+
+// sass --watch scss/main.scss:css/main.css
+
+.hidden{
+	display: none;
+}
+
+.topBar
+{
+	background-color: $maroon;
+}
+
+header{
+	nav{
+		ul{
+			margin-top: $pad15;
+			li{
+				float: $left;
+				margin-right: $pad15;
+				a{
+					color: $orange;
+					font-family: $droid;
+					font-size: $pad30;
+					&:hover{
+						color: $redorange;
+					}
+				}
+			}
+		}
+	}
+}
+
+.log{
+	ul{
+		margin-top: $pad20;
+		li{
+			float: $left;
+			margin-right: $pad15;
+			a{
+				color: $white;
+				font-size: $pad15;
+				&:hover{
+					color: $orange;
+				}
+			}
+		}
+	}
+}
+
+.headSearch{
+	input{
+		margin-top: $pad10;
+		border-radius: $pad10;
+	}
+}
+
+.bg{
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;
+	background-size: cover;
+}
+
+.logo{
+	margin-top : $per20;
+	h2{
+		color: $white;
+		font-size: $pad20;
+		text-decoration: underline;
+		font-family: $droid;
+	}
+}
+
+.productTitle{
+	h2{
+		color: $maroon;
+		font-family: $passion;
+		font-size: $pad50;
+		margin-top: $pad20;
+	}
+}
+
+.prodbox{
+	background-color: $redorange;
+	margin-top: $pad20;
+	img{
+		height: $per50;
+		width: $per50;
+		margin-left: $pad60;
+	}
+	h3{
+		color: $white;
+		font-family: $droid;
+		padding-top: $pad20;
+		font-size: $pad30;
+		text-align: center;
+	}
+	a{
+		color: $white;
+		&:hover{
+			color: $maroon;
+		}
+	}
+	p{
+		color: $white;
+		text-align: center;
+		font-family: $droid;
+		font-size: $pad15;
+		margin-bottom: $pad20;
+		padding-bottom: $pad20;
+	}
+}
+
+.ciderHelp{
+	p{
+		margin-top: 16px;
+	}
+}
+
+iframe{
+	padding-bottom: $pad30;
+}
+
+.suppTitle{
+
+	
+	h2{
+		color: $maroon;
+		font-family: $passion;
+		font-size: $pad50;
+		margin-top: $pad20;
+		margin-bottom: $pad10;
+	}
+}
+
+.suppliers{
+	text-align: center;
+	img{
+		margin-bottom: $pad10;
+		margin-top: $pad20;
+	}
+	a{
+		color: $maroon;
+		font-family: $droid;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+.conTitle{
+	margin-top: $pad20;
+	h2{
+		color: $maroon;
+		font-family: $passion;
+		font-size: $pad50;
+		margin-top: $pad20;
+	}
+}
+
+.contact{
+	label{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad10;
+		margin-top: $pad10;
+	}
+}
+
+.questions{
+	label{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad20;
+		margin-top: $pad20;
+	}
+}
+
+.conTitle{
+	h3{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad20;
+		margin-top: $pad20;
+		font-size: $pad20;
+	}
+	p{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad20;
+		margin-top: $pad20;
+	}
+}
+
+.social{
+	img{
+		margin-bottom: $pad20;
+	}
+}
+
+// Products
+
+.prodImage{
+	margin-left: $pad10;
+	margin-top: $pad10;
+}
+
+.filterBar{
+	border-right: 1px solid $black;
+	padding-right: $pad10;
+	h3{
+		font-family: $droid;
+		color: $maroon;
+		font-size: $pad20;
+		margin-bottom: $pad10;
+		margin-top: $pad10;
+	}
+	p{
+		font-family: $droid;
+		color: $maroon;
+		font-size: 18px;
+		margin-bottom: $pad20;
+		font-weight: $weight700;
+	}
+	ul{
+		li{
+			margin-bottom: $pad10;
+			a{
+				font-family: $droid;
+				color: $maroon;
+				&:hover{
+					font-weight: $weight700;
+					color: $orange;
+				}
+			}
+		}
+	}
+}
+
+.prodInfo{
+	h3{
+		font-family: $droid;
+		color: $maroon;
+		font-weight: $weight500;
+		font-size: 18px;
+		margin-bottom: $pad5;
+	}
+	p{
+		line-height: 16px;
+		font-family: $droid;
+		color: $maroon;
+		font-size: 12px;
+		margin-bottom: $pad5;
+	}
+}
+
+.priceInfo{
+	h3{
+		color: $maroon;
+		font-family: $passion;
+		font-size: 25px;
+		margin-bottom: $pad10;
+	}
+}
+
+.type{
+	h3{
+		font-weight: $weight700;
+		color: $orange;
+	}
+}
+
+.prodName{
+	margin-top: $pad20;
+}
+
+.buttEdit{
+	background-color: #FFF;
+	color: $maroon;
+	font-family: $droid;
+	border: 1px $maroon solid;
+	margin-bottom: $pad5;
+	padding: $pad5;
+	cursor: pointer;
+}
+
+.prodCon{
+	margin-top: $pad10;
+	margin-bottom: $pad20;
+}
+
+// About
+
+.about{
+	h2{
+		color: $maroon;
+		font-family: $passion;
+		font-size: $pad50;
+		margin-top: $pad20;
+		margin-bottom: $pad20;
+	}
+	h3{
+		color: $maroon;
+		font-family: $droid;
+		font-weight: $weight700;
+		margin-bottom: $pad5;
+	}
+	p{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad5;
+		line-height: $pad20;
+		font-size: 12px;
+	}
+	ul{
+		li{
+			list-style: circle;
+			line-height: $pad20;
+			color: $maroon;
+			font-family: $droid;
+			font-size: 12px;
+		}
+	}
+	img{
+		margin-bottom: $pad20;
+	}
+}
+
+.login{
+	background-color: $stwhite;
+	padding: $pad10;
+	border-radius: $pad20;
+	margin-top: $pad60;
+	h2{
+		color: $maroon;
+		font-family: $droid;
+		font-size: 25px;
+		margin-bottom: $pad10;
+	}
+	label{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad10;
+	}
+	input{
+		outline: none;
+	}
+}
+
+// Account
+
+.account{
+	h3{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad10;
+		font-size: $pad20;
+		margin-top: $pad20;
+	}
+	a{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad10;
+		font-size: $pad20;
+		margin-top: $pad20;
+		&:hover{
+			color: $orange;
+		}
+	}
+}
+
+.add{
+	h2{
+		color: $maroon;
+		font-family: $passion;
+		font-size: $pad50;
+		margin-top: $pad20;
+		margin-bottom: $pad20;
+	}
+	label{
+		color: $maroon;
+		font-family: $droid;
+		margin-bottom: $pad10;
+		font-size: $pad20;
+		margin-top: $pad20;
+	}
+}
+
+.addButt{
+	background-color: $white;
+	font-family: $droid;
+	color: $maroon;
+	padding: $pad10;
+	outline: none;
+	border: 1px solid $maroon;
+	cursor: pointer;
+}
+
+// Footer
+
+.footer{
+	background-color: $maroon;
+	footer{
+		font-family: $droid;
+		padding-top: $pad20;
+		padding-bottom: $pad20;
+		text-align: center;
+		color: $orange;
+		margin-top: $pad20;
+	}
+}
+
+.noMarg{
+	margin-top: 0px;
+}
