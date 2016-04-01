@@ -5,18 +5,14 @@ require_once('admin/includes/init.php');
 if (isset($_POST['search'])){
 	$search_term = trim($_POST['searchBox']);
 	$getDrink = search($search_term);
-}else{
-	$tbl = "tbl_drink";
-	$getDrink = getAll($tbl);
 }
 
 if (isset($_GET['filter'])) {
-	// $type = "drink_type";
-	// $tbl = "tbl_drink";
-	// $id = "drink_id";
 	$filter = $_GET['filter'];
-	$getDrink = filter($type);
-}else{
+	$getDrink = filterDrink($filter);
+}
+
+else{
 	$tbl = "tbl_drink";
 	$getDrink = getAll($tbl);
 }
