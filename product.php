@@ -1,7 +1,25 @@
 <?php 
 require_once('admin/includes/init.php');
-$tbl = "tbl_drink";
-$getDrink = getAll($tbl);
+
+
+if (isset($_POST['search'])){
+	$search_term = trim($_POST['searchBox']);
+	$getDrink = search($search_term);
+}else{
+	$tbl = "tbl_drink";
+	$getDrink = getAll($tbl);
+}
+
+if (isset($_GET['filter'])) {
+	// $type = "drink_type";
+	// $tbl = "tbl_drink";
+	// $id = "drink_id";
+	$filter = $_GET['filter'];
+	$getDrink = filter($type);
+}else{
+	$tbl = "tbl_drink";
+	$getDrink = getAll($tbl);
+}
 
 
  ?>
@@ -74,14 +92,18 @@ $getDrink = getAll($tbl);
 			<!-- Side Bar -->
 			<div class="small-12 large-3 columns filterBar" data-equalizer-watch>
 				<h3>Search</h3>
-				<input type="search" placeholder="search">
+				<form method="post" action="product.php">
+					<input type="search" name="searchBox" placeholder="search">
+					<input type="submit" name="search" value="search" class="buttEdit">
+				</form>
+				
 				<p>Type of products</p>
 				<ul>
-					<li><a href="#">All</a></li>
-					<li><a href="#">Wine</a></li>
-					<li><a href="#">Spirits</a></li>
-					<li><a href="#">Beer</a></li>
-					<li><a href="#">Cider</a></li>					
+					<li><a href="product.php">All</a></li>
+					<li><a href="product.php?filter=Wine">Wine</a></li>
+					<li><a href="product.php?filter=Spirits">Spirits</a></li>
+					<li><a href="product.php?filter=Beer">Beer</a></li>
+					<li><a href="product.php?filter=Cider">Cider</a></li>					
 				</ul>	
 			</div>
 			<!-- Content -->
@@ -95,7 +117,7 @@ $getDrink = getAll($tbl);
 				while($row = mysqli_fetch_array($getDrink)){
 					$str = "{$row['drink_info']}";
 
-					$pos = strpos($str, ' ', 150);
+					$pos = strpos($str, ' ', 100);
 
 					echo "
 					<div class=\"row\">
