@@ -117,7 +117,7 @@ if(isset($_POST['submit'])) {
 			<?php 
 
 				while($row = mysqli_fetch_array($catQuery)){
-					echo "<option value=\"{$row['catD_id']}\">{$row['catD_name']}</option>";
+					echo "<option value=\"{$row['catD_name']}\">{$row['catD_name']}</option>";
 				}
 
 			 ?>

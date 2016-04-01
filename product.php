@@ -93,33 +93,47 @@ $getDrink = getAll($tbl);
 
 			if(!is_string($getDrink)){
 				while($row = mysqli_fetch_array($getDrink)){
+					$str = "{$row['drink_info']}";
+
+					$pos = strpos($str, ' ', 150);
+
 					echo "
-					<div class=\"conPad\">
-						<div class=\"small-2 large-3 columns prodImage\">
-							<img src=\"images/{$row['drink_img']}\"alt=\"{$row['drink_title']}\">
-						</div>
-						<div class=\"small-9 large-6 columns prodInfo\">
-							<h3 class=\"prodName\">{$row['drink_title']}</h3>
-							<p>{$row['drink_amount']} bottle</p>
-							<p>{$row['drink_case']}</p>
-							<p>{$row['drink_comp']}</p>
-							<div class=\"type\">
-								<h3>Beer</h3>
+					<div class=\"row\">
+						<div class=\"conPad\">
+							<div class=\"small-2 large-2 columns prodImage\">
+								<img src=\"images/{$row['drink_img']}\"alt=\"{$row['drink_title']}\">
 							</div>
-							<p>{$row['drink_info']}</p>
-						</div>
-						<div class=\"small-12 large-2 end columns  priceInfo\">
-							<h3>{$row['drink_price']} <span>a case</span></h3>
-							<select>
-								<option>Qty</option>
-								<option>1</option>
-								<option>2</option>			
-								<option>3</option>			
-								<option>4</option>			
-								<option>5</option>											
-							</select>
-							<input class=\"buttEdit\" type=\"button\" value=\"More Info\">
-							<input class=\"buttEdit\" type=\"button\" value=\"Add to Cart\">	
+							<div class=\"small-9 large-7 columns prodInfo\">
+								<h3 class=\"prodName\">{$row['drink_title']}</h3>
+								<p>{$row['drink_amount']} bottle</p>
+								<p>{$row['drink_case']}</p>
+								<p>{$row['drink_comp']}</p>
+								<div class=\"type\">
+									<h3>{$row['drink_type']}</h3>
+								</div><p>";
+								if ($pos !== false){
+									echo substr($str, 0, $pos);
+								}
+
+								echo "...</p>";
+								echo "<a href=\"#\">More</a>";
+								// echo "
+								// <p>{$row['drink_info']}</p>";
+						echo "
+							</div>
+							<div class=\"small-12 large-2 end columns  priceInfo\">
+								<h3>$ {$row['drink_price']} <br><span>a case</span></h3>
+								<select>
+									<option>Qty</option>
+									<option>1</option>
+									<option>2</option>			
+									<option>3</option>			
+									<option>4</option>			
+									<option>5</option>											
+								</select>
+								<input class=\"buttEdit\" type=\"button\" value=\"More Info\">
+								<input class=\"buttEdit\" type=\"button\" value=\"Add to Cart\">	
+							</div>
 						</div>
 					</div>";
 				}
