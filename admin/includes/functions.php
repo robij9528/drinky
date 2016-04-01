@@ -14,12 +14,13 @@ function addDrink($img, $title, $size, $case, $price, $comp, $cat, $info){
 				// $lastID = $row['drink_id'];
 				// $qstring3 = "INSERT INTO tbl_l_dc VALUES(NULL,{$lastID},{$cat})";
 				// $result3 = mysqli_query($link, $qstring3);
-				if($result3){
+				// if($result){
 					redirect_to("admin_index.php");
-				}else{
+				}
+				else{
 					echo "Failed to upload";
 				}
-			}
+			// }
 		}
 	}
 	mysqli_close($link);
