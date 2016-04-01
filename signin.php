@@ -8,9 +8,9 @@ if (isset($_POST['submit'])) {
 	if($username !="" && $password !="") {
 		$log_res = logIn($username, $password);
 		$message = $log_res;
-	}
-}else{
+	}else{
 	$message = "plaese fill in the required fields";
+}
 }
 
 

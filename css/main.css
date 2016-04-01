@@ -307,6 +307,16 @@ iframe {
   .addCon ul li a:hover {
     color: #ee5f4a; }
 
+.deleteDrink h3 {
+  font-family: "Droid Serif", serif;
+  color: #3c0017;
+  font-size: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px; }
+.deleteDrink p {
+  padding-bottom: 5px;
+  padding-top: 20px; }
+
 .footer {
   background-color: #3c0017; }
   .footer footer {

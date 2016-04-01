@@ -468,6 +468,20 @@ iframe{
 	}
 }
 
+.deleteDrink{
+	h3{
+		font-family: $droid;
+		color: $maroon;
+		font-size: $pad30;
+		padding-bottom: $pad15;
+		padding-top: $pad15;
+	}
+	p{
+		padding-bottom: $pad5;
+		padding-top: $pad20;
+	}
+}
+
 // Footer
 
 .footer{

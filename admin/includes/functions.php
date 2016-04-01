@@ -55,5 +55,18 @@ function filterDrink($filter){
 	mysqli_close($link);
 }
 
+function deleteDrink($id){
+	include("connect.php");
+	$del = "DELETE FROM tbl_drink WHERE drink_id={$id}";
+	$delquery = mysqli_query($link, $del);
+	if($delquery){
+		redirect_to("../delete_drink.php");
+	}else{
+		$error =  "There was an error accessing this information.  Please contact your admin.";
+		return $error;		
+	}
+	mysqli_close($link);
+}
+
 
  ?>
