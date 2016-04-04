@@ -2,20 +2,12 @@
 
 require_once("includes/init.php");
 
-$tbl = "tbl_catD";
-$catQuery = getAll($tbl);
-
 if(isset($_POST['submit'])) {
-	$img = trim($_FILES['image']['name']);
-	$title = trim($_POST['product']);
-	$size = trim($_POST['bsize']);
-	$case = trim($_POST['qcase']);
-	$price = trim($_POST['price']);
-	$comp = trim($_POST['comp']);
-	$cat = trim($_POST['cat']);
-	$info = trim($_POST['info']);
-	$uploadDrink = addDrink($img, $title, $size, $case, $price, $comp, $cat, $info);
-	$message = $uploadDrink;
+	$img = trim($_FILES['supImage']['name']);
+	$title = trim($_POST['supTitle']);
+	$url = trim($_POST['supLink']);
+	$uploadSup = addSup($img, $title, $url);
+	$message = $uploadSup;
 }
 
 
@@ -27,7 +19,7 @@ if(isset($_POST['submit'])) {
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Welcome</title>
+	<title>Add Supplier</title>
 <link rel="stylesheet" href="../css/foundation.min.css"/>
 <link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="../css/main.css" rel="stylesheet" type="text/css" media="screen">
@@ -87,68 +79,27 @@ if(isset($_POST['submit'])) {
 	<a class="small-12 large-3 columns" href="includes/caller.php?caller_id=logout">Sign out</a>
 </section>
 
-<form action="add_drink.php" enctype="multipart/form-data" method="post"  class="row add">
-	<h2 class="hidden">Add Product</h2>
-	<h2>Add Product</h2>
-	<div class="small-12 large-6 columns">
-		<label>Product Name</label>
-		<input type="text" name="product" placeholder="product">
-	</div>
-	<div class="small-6 large-3 columns">
-		<label>Bottle Size</label>
-		<input type="text" name="bsize" placeholder="bottle size">	
-	</div>
-	<div class="small-6 large-3 columns">
-		<label>Qty In Case</label>
-		<input type="text" name="qcase" placeholder="Quantity">	
-	</div>
-	<div class="small-6 large-6 columns">
-		<label>Price</label>
-		<input type="text" name="price" placeholder="price">	
-	</div>
-	<div class="small-6 large-6 columns">
-		<label>Company</label>
-		<input type="text" name="comp" placeholder="Company">	
-	</div>
-	<div class="small-12 large-12 columns">
-		<label>Type</label>
-		<select name="cat">
-			<option>Select Type</option>
-			<?php 
+<div class="row add">
+<h2 class="hidden">Add Supplier</h2>
+<h2>Add Supplier</h2>
+</div>
 
-				while($row = mysqli_fetch_array($catQuery)){
-					echo "<option value=\"{$row['catD_name']}\">{$row['catD_name']}</option>";
-				}
-
-			 ?>
-		</select>	
-	</div>
-	<div class="small-12 large-12 end columns">
-		<label>Information</label>
-		<textarea name="info"></textarea>	
-	</div>
-
-
-	<input class="small-12 large-3  columns" name="image" type="file" value="Add Image">
-	<input class="small-12 large-3  columns addButt" name="submit" type="submit" value="Add Product">
-
-
-</form>
+<div class="row add">
+	<form action="add_supplier.php" enctype="multipart/form-data" method="post"  class="small-12 large-12 columns">	
+		<label>Supplier Name</label>
+		<input name="supTitle" value="">
+		<label>Supplier Link</label>
+		<input name="supLink" value="">
+		<input  name="supImage" type="file" value="Add Image">
+		<input class="addButt" name="submit" type="submit" value="Add Supplier">						
+	</form>
+</div>
 
 <div class="row">
 	<div class="small-12 large-12 columns back">
 	 <a href="admin_index.php">Back</a>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 <section class="footer footerhelp">

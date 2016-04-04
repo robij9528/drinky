@@ -2,20 +2,15 @@
 
 require_once("includes/init.php");
 
-$tbl = "tbl_catD";
-$catQuery = getAll($tbl);
+$tbl = "tbl_user";
+$staff = getAll($tbl);
 
-if(isset($_POST['submit'])) {
-	$img = trim($_FILES['image']['name']);
-	$title = trim($_POST['product']);
-	$size = trim($_POST['bsize']);
-	$case = trim($_POST['qcase']);
-	$price = trim($_POST['price']);
-	$comp = trim($_POST['comp']);
-	$cat = trim($_POST['cat']);
-	$info = trim($_POST['info']);
-	$uploadDrink = addDrink($img, $title, $size, $case, $price, $comp, $cat, $info);
-	$message = $uploadDrink;
+if(isset($_POST['addAdmin'])) {
+	$username = trim($_POST['username']);
+	$email = trim($_POST['email']);
+	$password = trim($_POST['pass']);
+	$addAdmin = addAdmin($username, $email, $password);
+	$message = $addAdmin;
 }
 
 
@@ -27,7 +22,7 @@ if(isset($_POST['submit'])) {
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Welcome</title>
+	<title>Add Admin</title>
 <link rel="stylesheet" href="../css/foundation.min.css"/>
 <link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="../css/main.css" rel="stylesheet" type="text/css" media="screen">
@@ -87,68 +82,45 @@ if(isset($_POST['submit'])) {
 	<a class="small-12 large-3 columns" href="includes/caller.php?caller_id=logout">Sign out</a>
 </section>
 
-<form action="add_drink.php" enctype="multipart/form-data" method="post"  class="row add">
-	<h2 class="hidden">Add Product</h2>
-	<h2>Add Product</h2>
+<div class="row add">
+<h2 class="hidden">Edit Admin</h2>
+<h2>Edit Admin</h2>
+</div>
+
+<div class="row add">
 	<div class="small-12 large-6 columns">
-		<label>Product Name</label>
-		<input type="text" name="product" placeholder="product">
-	</div>
-	<div class="small-6 large-3 columns">
-		<label>Bottle Size</label>
-		<input type="text" name="bsize" placeholder="bottle size">	
-	</div>
-	<div class="small-6 large-3 columns">
-		<label>Qty In Case</label>
-		<input type="text" name="qcase" placeholder="Quantity">	
-	</div>
-	<div class="small-6 large-6 columns">
-		<label>Price</label>
-		<input type="text" name="price" placeholder="price">	
-	</div>
-	<div class="small-6 large-6 columns">
-		<label>Company</label>
-		<input type="text" name="comp" placeholder="Company">	
-	</div>
-	<div class="small-12 large-12 columns">
-		<label>Type</label>
-		<select name="cat">
-			<option>Select Type</option>
-			<?php 
-
-				while($row = mysqli_fetch_array($catQuery)){
-					echo "<option value=\"{$row['catD_name']}\">{$row['catD_name']}</option>";
-				}
-
-			 ?>
-		</select>	
-	</div>
-	<div class="small-12 large-12 end columns">
-		<label>Information</label>
-		<textarea name="info"></textarea>	
+		<form action="edit_admin.php" method="post" >	
+			<label>Username</label>
+			<input name="username" value="">
+			<label>Emial</label>
+			<input name="email" value="">
+			<label>Password</label>
+			<input name="pass" value="">
+			<br>
+			<input class="addButt" name="addAdmin" type="submit" value="Add Admin">						
+		</form>
 	</div>
 
+	<div class="small-12 large-6 columns deleteDrink">
+		<?php 
+			while ($row=mysqli_fetch_array($staff)) {
+				// echo "<div class=\"small-12 large-12 columns\">";
+				echo "<p>{$row['user_name']}</p>";
+				echo "<a href=\"includes/caller_admin.php?caller_id=delete&id={$row['user_id']}\">";
+				echo "Delete";
+				echo "</a><br>";
+				// echo "</div>";
+			}
+		 ?>
+	</div>
 
-	<input class="small-12 large-3  columns" name="image" type="file" value="Add Image">
-	<input class="small-12 large-3  columns addButt" name="submit" type="submit" value="Add Product">
-
-
-</form>
+</div>
 
 <div class="row">
 	<div class="small-12 large-12 columns back">
 	 <a href="admin_index.php">Back</a>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 <section class="footer footerhelp">

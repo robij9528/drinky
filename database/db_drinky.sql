@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2016 at 10:22 PM
+-- Generation Time: Apr 04, 2016 at 09:48 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -73,6 +73,61 @@ INSERT INTO tbl_drink (drink_id, drink_title, drink_amount, drink_case, drink_pr
 -- --------------------------------------------------------
 
 --
+-- Table structure for table 'tbl_staff'
+--
+
+CREATE TABLE IF NOT EXISTS tbl_staff (
+  staff_id smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  staff_img varchar(100) NOT NULL,
+  staff_name varchar(100) NOT NULL,
+  staff_info text NOT NULL,
+  PRIMARY KEY (staff_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table 'tbl_staff'
+--
+
+INSERT INTO tbl_staff (staff_id, staff_img, staff_name, staff_info) VALUES
+(1, 'bill.jpg', 'Bill Wittur, Chief Sipster', 'Bill has been a wine agent for nearly 5 years, but also has substantial experience and recognition for his participation in the evolution of online marketing and digital platforms. He''s a chronic entrepreneur and has started and managed two other businesses in the past: an online music portal and a digital marketing consulting company. Interests include music, especially live concerts, movies, guitar, travel and gaming. Favourite ''go to'' libation: gin & cucumber soda with a touch of lime Favourite bands: U2, The National, Yukon Blonde, The Shins, Oasis, ELO, Bruce Springsteen, Stars Favourite Games: Anything to do with Batman, Assassin''s Creed'),
+(2, 'ryan.jpg', 'Liam Rice, Chief Code Monkey', 'Liam has most of his coding years building stuff from backend to front, touching all kinds of different code bases over the years. From before the dotCom world to Web 2.0 and now beyond. Building stuff for the automotive, sports, and medical sectors. Bill offered some alcohol :). He''s a beach volleyball player, cyclist, hockey player and also a referee for probably too long (so he''s totally never wrong ;P). Favourite ''go to'' libation: a good old rum and coke, or something sweet Favourite bands: Pretty much everything from motown to indie. A good fast pace is great for getting stuff done. Favourite Games: Super Dodgeball for the original NES');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'tbl_supplier'
+--
+
+CREATE TABLE IF NOT EXISTS tbl_supplier (
+  supplier_id smallint(4) unsigned NOT NULL AUTO_INCREMENT,
+  supplier_img varchar(100) NOT NULL,
+  supplier_name varchar(100) NOT NULL,
+  supplier_url varchar(200) NOT NULL,
+  PRIMARY KEY (supplier_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table 'tbl_supplier'
+--
+
+INSERT INTO tbl_supplier (supplier_id, supplier_img, supplier_name, supplier_url) VALUES
+(1, 'beaver.jpg', 'Frisky & Gamble Cellars', '#'),
+(2, 'highlander.jpg', 'Highlander Brew Co.', 'localhost'),
+(3, 'ampersand.jpg', 'Ampersand Distilling Co', 'localhost'),
+(4, 'camp.jpg', 'Tenuta Campoferrato', 'localhost'),
+(5, 'dry_digs.jpg', 'Dry Diggings', 'localhost'),
+(6, 'mateus.jpg', 'Mateus & Sequeira Vinhos S.A.', 'localhost'),
+(7, 'millaire.jpg', 'Milliaire Winery', 'localhost'),
+(8, 'skinner.jpg', 'Skinner Vineyards', 'localhost'),
+(9, 'trail.jpg', 'Trail Estate', 'localhost'),
+(10, 'grady.jpg', 'Grady Family Vineyards', 'localhost'),
+(11, 'reif.jpg', 'Reif Estate Winery', 'localhost'),
+(12, 'voir.jpg', 'VoirNosVins - CRWines', 'localhost'),
+(13, 'yukon.jpg', 'Yukon Shine Distillery', 'localhost');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table 'tbl_user'
 --
 
@@ -89,7 +144,8 @@ CREATE TABLE IF NOT EXISTS tbl_user (
 --
 
 INSERT INTO tbl_user (user_id, user_name, user_pass, user_email) VALUES
-(1, 'robij9528', 'jaker', 'jakerobinson9528@gmail.com');
+(1, 'robij9528', 'jaker', 'jakerobinson9528@gmail.com'),
+(2, 'Jacob', 'dsadasd', 'jakerobinson9528@gmail.com');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -79,10 +79,13 @@ if (isset($_POST['submit'])) {
 <section data-interchange="[images/bg_mobile.jpg, (default)], [images/bg.jpg, (large)]" class="bg">
 	<h2 class="hidden">Front Image</h2>
 	<div class="row">
-		<?php if (!empty($message))
-			{ echo $message;} 
-		?>
-		<form action="signin.php" method="post" class="small-12 large-7 columns login">
+		<div class="small-12 large-12 columns error">
+			<?php if (!empty($message))
+				{ echo $message;} 
+			?>
+		</div>
+
+		<form action="signin.php" method="post" class="small-12 large-7 end columns login">
 			<h2>Login</h2>
 			<label>Username</label>
 			<input type="text" name="username" value="username">

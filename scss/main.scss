@@ -176,18 +176,25 @@ iframe{
 }
 
 .suppliers{
-	text-align: center;
-	img{
-		margin-bottom: $pad10;
-		margin-top: $pad20;
-	}
-	a{
-		color: $maroon;
-		font-family: $droid;
-		&:hover{
-			text-decoration: underline;
+	
+		li{
+			text-align: center;
+
+			img{
+			margin-bottom: $pad10;
+			margin-top: $pad20;
+			}
+
+			a{
+			color: $maroon;
+			font-family: $droid;
+				&:hover{
+					text-decoration: underline;
+				}
+			}	
 		}
-	}
+
+
 }
 
 .conTitle{
@@ -419,6 +426,11 @@ iframe{
 	}
 }
 
+.error{
+	color: $white;
+	padding-top: $pad10;
+}
+
 .add{
 	h2{
 		color: $maroon;
@@ -433,6 +445,9 @@ iframe{
 		margin-bottom: $pad10;
 		font-size: $pad20;
 		margin-top: $pad20;
+	}
+	input{
+		margin-top: $pad10;
 	}
 }
 
@@ -480,6 +495,20 @@ iframe{
 		padding-bottom: $pad5;
 		padding-top: $pad20;
 	}
+}
+
+.back {
+	a{
+		padding: $pad5;
+		border: 1px solid $maroon;
+		color: $maroon;
+		&:hover{
+			background-color: $maroon;
+			color: $white;
+		}	
+	}
+	margin-top: $pad30;
+
 }
 
 // Footer

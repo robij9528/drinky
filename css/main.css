@@ -96,15 +96,15 @@ iframe {
   margin-top: 20px;
   margin-bottom: 10px; }
 
-.suppliers {
+.suppliers li {
   text-align: center; }
-  .suppliers img {
+  .suppliers li img {
     margin-bottom: 10px;
     margin-top: 20px; }
-  .suppliers a {
+  .suppliers li a {
     color: #3c0017;
     font-family: "Droid Serif", serif; }
-    .suppliers a:hover {
+    .suppliers li a:hover {
       text-decoration: underline; }
 
 .conTitle {
@@ -274,6 +274,10 @@ iframe {
   .account a:hover {
     color: #ffb36f; }
 
+.error {
+  color: #FFF;
+  padding-top: 10px; }
+
 .add h2 {
   color: #3c0017;
   font-family: "Passion One", serif;
@@ -286,6 +290,8 @@ iframe {
   margin-bottom: 10px;
   font-size: 20px;
   margin-top: 20px; }
+.add input {
+  margin-top: 10px; }
 
 .addButt {
   background-color: #FFF;
@@ -316,6 +322,16 @@ iframe {
 .deleteDrink p {
   padding-bottom: 5px;
   padding-top: 20px; }
+
+.back {
+  margin-top: 30px; }
+  .back a {
+    padding: 5px;
+    border: 1px solid #3c0017;
+    color: #3c0017; }
+    .back a:hover {
+      background-color: #3c0017;
+      color: #FFF; }
 
 .footer {
   background-color: #3c0017; }

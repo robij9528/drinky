@@ -84,8 +84,17 @@ require_once('includes/init.php');
 
  ?>
 
+<div class="small-12 large-12 columns back">
  <a href="admin_index.php">Back</a>
+</div>
+
 
 </div>
+
+<section class="footer">
+	
+	<footer>Drinky &copy; 2016</footer>
+
+</section>
 </body>
 </html>

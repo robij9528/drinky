@@ -1,3 +1,10 @@
+<?php 
+require_once('admin/includes/init.php');
+$tbl = "tbl_staff";
+$getstaff = getAll($tbl);
+
+ ?>
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -73,7 +80,7 @@
 		<p>Our primary focus is on introducing Canadians to the suppliers and makers in their own backyards, but also to the millions of unique alcohol products that are made around the world, all from the convenience of their own home.</p>
 		<h3>What Are Our Views on Alcohol and Social Responsibility?</h3>
 		<p>All kidding aside, we take alcohol seriously. When it comes to social issues related to alcohol, here are just a few of our views:</p>
-		<ul>
+		<ul class="disc">
 			<li>We have an initial screening for age of majority.</li>
 			<li>Suppliers and agents are asked to screen for potential abuse issues when delivering.</li>
 			<li>Suppliers and agents are required to have someone age of majority sign for project on delivery.</li>
@@ -86,20 +93,27 @@
 <section class="row about">
 	<h2 class="hidden">Who are we</h2>
 	<h2 class="small-12 large-12 columns">Who We Are</h2>
-	<div class="small-12 large-12 columns">
-		<img class="small-6 large-3 columns small-centered large-uncentered" src="images/bill.jpg" alt="image of bill">
-		<div class=="small-12 large-9 columns profile">
-			<h3>Bill Wittur, Chief Sipster</h3>
-			<p>Bill has been a wine agent for nearly 5 years, but also has substantial experience and recognition for his participation in the evolution of online marketing and digital platforms. He's a chronic entrepreneur and has started and managed two other businesses in the past: an online music portal and a digital marketing consulting company. Interests include music, especially live concerts, movies, guitar, travel and gaming. Favourite 'go to' libation: gin &amp; cucumber soda with a touch of lime Favourite bands: U2, The National, Yukon Blonde, The Shins, Oasis, ELO, Bruce Springsteen, Stars Favourite Games: Anything to do with Batman, Assassin's Creed</p>
-		</div>
-	</div>
-	<div class="small-12 large-12 columns">
-		<img class="small-6 large-3 columns small-centered large-uncentered" src="images/ryan.jpg" alt="image of ryan">
-		<div class=="small-12 large-9 columns profile">
-			<h3>Liam Rice, Chief Code Monkey</h3>
-			<p>Liam has most of his coding years building stuff from backend to front, touching all kinds of different code bases over the years. From before the dotCom world to Web 2.0 and now beyond. Building stuff for the automotive, sports, and medical sectors. Bill offered some alcohol :). He's a beach volleyball player, cyclist, hockey player and also a referee for probably too long (so he's totally never wrong ;P). Favourite 'go to' libation: a good old rum and coke, or something sweet Favourite bands: Pretty much everything from motown to indie. A good fast pace is great for getting stuff done. Favourite Games: Super Dodgeball for the original NES</p>
-		</div>
-	</div>
+
+
+	<?php 
+	if(!is_string($getstaff)){
+		while ($row = mysqli_fetch_array($getstaff)) {
+			echo "
+				<div class=\"small-12 large-12 columns\">
+					<div class=\"row\">
+						<img class=\"small-6 large-3 columns small-centered large-uncentered\" src=\"images/{$row['staff_img']}\" alt=\"{$row['staff_name']}\">
+						<div class=\"small-12 large-9 columns profile\">
+							<h3>{$row['staff_name']}</h3>
+							<p>{$row['staff_info']}</p>			
+						</div>
+					</div>
+				</div>";
+		}
+	}
+
+
+	 ?>
+
 </section>
 
 

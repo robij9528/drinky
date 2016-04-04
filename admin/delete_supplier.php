@@ -1,7 +1,18 @@
+<?php 
+require_once('includes/init.php');
+	//confirm_logged_in
+
+	
+
+	$tbl = "tbl_supplier";
+	$drink = getAll($tbl);
+?>
+
+
+
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Welcome</title>
+	<title>Delete Supplier</title>
 <link rel="stylesheet" href="../css/foundation.min.css"/>
 <link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="../css/main.css" rel="stylesheet" type="text/css" media="screen">
@@ -55,47 +66,33 @@
 	</div>
 </header>
 
-<section class="row account">
-	<h2 class="hidden">Welcome</h2>
-	<h3 class="small-12 large-9 columns">Welcome User to your account</h3>
-	<a class="small-12 large-3 columns" href="includes/caller.php?caller_id=logout">Sign out</a>
-</section>
+<div class="row deleteDrink">
+
+<h3 class="small-12 large-12 columns">Delete Supplier</h3>
+
+<?php 
+
+	while ($row=mysqli_fetch_array($drink)) {
+		echo "<div class=\"small-12 large-12 columns\">";
+		echo "<p>{$row['supplier_name']}</p>";
+		echo "<a href=\"includes/caller_supplier.php?caller_id=delete&id={$row['supplier_id']}\">";
+		echo "Delete";
+		echo "</a><br>";
+		echo "</div>";
+	}
 
 
-<div class="row addCon">
-	<ul class="small-12 large-12 large-centered columns">
-		<li><a href="add_drink.php">Add Product</a></li>
-		<li><a href="delete_drink.php">Delete Product</a></li>		
-		<li><a href="add_supplier.php">Add Supplier</a></li>
-		<li><a href="delete_supplier.php">Delete Supplier</a></li>
-		<li><a href="edit_staff.php">Edit Staff</a></li>
-		<li><a href="edit_admin.php">Edit Admin</a></li>
-	</ul>	
+ ?>
+
+<div class="small-12 large-12 columns back">
+ <a href="admin_index.php">Back</a>
+</div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-<section class="footer footerhelp">
+<section class="footer">
 	
 	<footer>Drinky &copy; 2016</footer>
 
 </section>
-
-
-<script src="../js/main.js"></script>	
-<script src="../js/vendor/jquery.js"></script>
-<script src="../js/foundation.min.js"></script>
-<script>
-      $(document).foundation();
-</script>
 </body>
 </html>

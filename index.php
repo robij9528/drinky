@@ -1,3 +1,11 @@
+<?php 
+require_once('admin/includes/init.php');
+$tbl = "tbl_supplier";
+$getSupp = getAll($tbl);
+
+ ?>
+
+
 <!doctype html>
 <html>
 <head>
@@ -75,7 +83,7 @@
 	<h2 class="small-12 large-12 columns">Products</h2>
 		<div class="small-6 large-3 columns ">
 			<div class="prodbox">
-				<h3><a href="#">Wine</a></h3>
+				<h3><a href="product.php?filter=Wine">Wine</a></h3>
 				<img src="images/wine.svg" alt='wine outline'>
 				<p>Find top rated, exotic <br> and distinctive wines</p>
 			</div>
@@ -83,7 +91,7 @@
 
 		<div class="small-6 large-3 columns ">
 			<div class="prodbox">
-				<h3><a href="#">Spirits</a></h3>
+				<h3><a href="product.php?filter=Spirits">Spirits</a></h3>
 				<img src="images/martini.svg" alt='spirits outline'>
 				<p>Explore refined and <br> consummated spirits</p>
 			</div>
@@ -91,7 +99,7 @@
 
 		<div class="small-6 large-3 columns ">
 			<div class="prodbox">
-				<h3><a href="#">Beer</a></h3>
+				<h3><a href="product.php?filter=Beer">Beer</a></h3>
 				<img src="images/beer.svg" alt='beer outline'>
 				<p>Delicious, refreshing, <br> tasty, heavenly</p>
 			</div>
@@ -99,7 +107,7 @@
 
 		<div class="small-6 large-3 columns ">
 			<div class="prodbox ciderHelp">
-				<h3><a href="#">Cider</a></h3>
+				<h3><a href="product.php?filter=Cider">Cider</a></h3>
 				<img src="images/cider.svg" alt='cider outline'>
 				<p>Crisp and Sweet</p>
 			</div>
@@ -112,70 +120,25 @@
 
 	<iframe class="small-12 large-12 columns" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11681.521846400687!2d-81.28491615!3d42.9491862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1454291291257" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/ampersand.png" alt="ampersand logo">
-		<a href="#">Ampersand Distilling Co</a>
+
+	<div class=" small-12 large-12 columns">
+	
+		<ul class="suppilers small-block-grid-4 large-block-grid-6">
+			<?php 
+				if(!is_string($getSupp)){
+					while($row = mysqli_fetch_array($getSupp)){
+						echo "<li>
+							<img src=\"images/{$row['supplier_img']}\" alt=\"{$row['supplier_name']}\">
+							<a href=\"{$row['supplier_url']}\">{$row['supplier_name']}</a>
+						</li>";
+					}
+				}
+
+			 ?>
+		</ul>
+
 	</div>
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/beaver.jpg" alt="beaver logo">
-		<a href="#">Frisky &amp; Gamble Cellars</a>
-	</div>
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/camp.jpg" alt="Campoferrato logo">
-		<a href="#">Tenuta Campoferrato</a>
-	</div>
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/dry_digs.jpg" alt="dry digging logo">
-		<a href="#">Dry Diggings</a>
-	</div>		
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/highlander.jpg" alt="highlander logo">
-		<a href="#">Highlander Brew Co.</a>
-	</div>
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/mateus.jpg" alt="mateus logo">
-		<a href="#">Mateus &amp; Sequeira Vinhos S.A.</a>
-	</div>
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/millaire.jpg" alt="millaire logo">
-		<a href="#">Milliaire Winery</a>
-	</div>
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/skinner.jpg" alt="skinner logo">
-		<a href="#">Skinner Vineyards</a>
-	</div>
-
-	<div class="small-4 large-2 columns suppilers">
-		<img src="images/trail.jpg" alt="trail logo">
-		<a href="#">Trail Estate</a>
-	</div>
-
-	<div class="small-4 large-2 columns show-for-medium-up suppilers">
-		<img src="images/grady.jpg" alt="grady logo">
-		<a href="#">Grady Family Vineyards</a>
-	</div>
-
-	<div class="small-4 large-2 show-for-medium-up columns suppilers">
-		<img src="images/reif.jpg" alt="reif logo">
-		<a href="#">Reif Estate Winery</a>
-	</div>
-
-	<div class="small-4 large-2 show-for-medium-up columns suppilers">
-		<img src="images/voir.jpg" alt="VoirNosVins logo">
-		<a href="#">VoirNosVins - CRWines</a>
-	</div>
-
-	<div class="small-4 large-2 show-for-medium-up columns suppilers">
-		<img src="images/yukon.jpg" alt="Yukon Shine Distillery logo">
-		<a href="#">Yukon Shine Distillery</a>
-	</div>		
+	
 </section>
 
 <section class="row conTitle">
@@ -189,7 +152,8 @@
 				<label>Email</label>
 				<input type="text" placeholder="Name">
 				<label>Message</label>
-				<textarea></textarea>								
+				<textarea></textarea>
+				<input class="addButt text-center" value="Submit">								
 			</div>	
 		</div>				
 	</div>
