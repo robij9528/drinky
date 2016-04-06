@@ -5,8 +5,9 @@ require_once("includes/init.php");
 if(isset($_POST['submit'])) {
 	$img = trim($_FILES['supImage']['name']);
 	$title = trim($_POST['supTitle']);
-	$url = trim($_POST['supLink']);
-	$uploadSup = addSup($img, $title, $url);
+	$info = trim($_POST['supInfo']);
+	$agent = trim($_POST['supAge']);
+	$uploadSup = addSup($img, $title, $info, $agent);
 	$message = $uploadSup;
 }
 
@@ -88,8 +89,10 @@ if(isset($_POST['submit'])) {
 	<form action="add_supplier.php" enctype="multipart/form-data" method="post"  class="small-12 large-12 columns">	
 		<label>Supplier Name</label>
 		<input name="supTitle" value="">
-		<label>Supplier Link</label>
-		<input name="supLink" value="">
+		<label>Agents</label>
+		<input name="supAge" value="">
+		<label>Supplier Info</label>
+		<textarea name="supInfo" value=""></textarea> 
 		<input  name="supImage" type="file" value="Add Image">
 		<input class="addButt" name="submit" type="submit" value="Add Supplier">						
 	</form>

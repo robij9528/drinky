@@ -326,9 +326,15 @@ iframe{
 	}
 }
 
+.specs{
+	font-size: $pad20;
+	font-weight: 700;
+}
+
 .conPad{
 	padding-top: $pad20;
-	padding-bottom: $pad20;
+	// padding-bottom: $pad20;
+	border-bottom: 1px solid $maroon;
 }
 
 .type{
@@ -538,7 +544,16 @@ iframe{
 		font-size: 13px;
 		line-height: 16px;
 		padding-top: $pad10;
+		padding-bottom: $pad10;
 	}
+	li{
+		padding-top: $pad5;
+	}
+}
+
+.agent{
+	font-size: $pad20;
+	border-top: 1px solid $maroon;
 }
 
 // Footer

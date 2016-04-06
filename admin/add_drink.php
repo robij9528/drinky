@@ -14,7 +14,8 @@ if(isset($_POST['submit'])) {
 	$comp = trim($_POST['comp']);
 	$cat = trim($_POST['cat']);
 	$info = trim($_POST['info']);
-	$uploadDrink = addDrink($img, $title, $size, $case, $price, $comp, $cat, $info);
+	$spec = trim($_POST['spec']);
+	$uploadDrink = addDrink($img, $title, $size, $case, $price, $comp, $cat, $info, $spec);
 	$message = $uploadDrink;
 }
 
@@ -27,7 +28,7 @@ if(isset($_POST['submit'])) {
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Welcome</title>
+	<title>Add Drink</title>
 <link rel="stylesheet" href="../css/foundation.min.css"/>
 <link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="../css/main.css" rel="stylesheet" type="text/css" media="screen">
@@ -123,9 +124,13 @@ if(isset($_POST['submit'])) {
 			 ?>
 		</select>	
 	</div>
-	<div class="small-12 large-12 end columns">
+	<div class="small-12 large-6 end columns">
 		<label>Information</label>
 		<textarea name="info"></textarea>	
+	</div>
+	<div class="small-12 large-6 end columns">
+		<label>Specs</label>
+		<textarea name="spec"></textarea>	
 	</div>
 
 

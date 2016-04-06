@@ -124,7 +124,7 @@ else{
 							<div class=\"small-9 large-7 columns prodInfo\">
 								<h3 class=\"prodName\">{$row['drink_title']}</h3>
 								<p>{$row['drink_amount']} bottle</p>
-								<p>{$row['drink_case']}</p>
+								<p>{$row['drink_case']} Bottles</p>
 								<p>{$row['drink_comp']}</p>
 								<div class=\"type\">
 									<h3>{$row['drink_type']}</h3>

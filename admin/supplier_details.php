@@ -3,8 +3,8 @@
 require_once('includes/init.php');
 
 if(isset($_GET['id'])){
-	$tbl = "tbl_drink";
-	$col = "drink_id";
+	$tbl = "tbl_supplier";
+	$col = "supplier_id";
 	$id = $_GET['id'];
 	$getSingle = getSingle($tbl, $col, $id);
 }
@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
 
 <html>
 <head>
-	<title>Drink Details</title>
+	<title>Supplier Details</title>
 <link rel="stylesheet" href="../css/foundation.min.css"/>
 <link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="../css/main.css" rel="stylesheet" type="text/css" media="screen">
@@ -73,29 +73,19 @@ if(isset($_GET['id'])){
 
 	if(!is_string($getSingle)){
 		$row = mysqli_fetch_array($getSingle);
-		echo "<img class=\"small-12 large-2 columns\" src=\"../images/{$row['drink_img']}\" alt=\"{$row['drink_title']}\">
-		<div class=\"small-12 large-8 columns\">
-			<h2>{$row['drink_title']}</h2>";
-		echo "<p>";			
-		echo nl2br("{$row['drink_info']}");
-		echo "</p>";
-		echo "<p class=\"specs\">Specs</p>";
-		echo "<p>";
-		echo nl2br("{$row['drink_spec']}");
-		echo "</p></div>";
+		echo "<img class=\"small-12 large-3 columns\" src=\"../images/{$row['supplier_img']}\" alt=\"{$row['supplier_name']}\">
+		<div class=\"small-12 large-9 columns\">
+			<h2>{$row['supplier_name']}</h2>
+			<p>";
 
-		echo "<div class=\"small-12 large-2 end columns  priceInfo\">
-				<h3>$ {$row['drink_price']} <br><span>a case</span></h3>
-				<select>
-					<option>Qty</option>
-					<option>1</option>
-					<option>2</option>			
-					<option>3</option>			
-					<option>4</option>			
-					<option>5</option>											
-				</select>
-				<input class=\"buttEdit\" type=\"button\" value=\"Add to Cart\">	
-			</div>";
+		echo nl2br($row['supplier_info']);
+
+		echo "</p>
+		<p class=\"agent\">Agents</p>
+		<ul class=\"square\">
+			{$row['supplier_agent']}
+		</ul>	
+		</div>";
 
 	}
 
@@ -106,7 +96,7 @@ if(isset($_GET['id'])){
 
 <div class="row">
 	<div class="small-12 large-12 columns back">
-	 <a href="../product.php">Back</a>
+	 <a href="../index.php">Back</a>
 	</div>
 </div>
 

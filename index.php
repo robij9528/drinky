@@ -129,7 +129,7 @@ $getSupp = getAll($tbl);
 					while($row = mysqli_fetch_array($getSupp)){
 						echo "<li>
 							<img src=\"images/{$row['supplier_img']}\" alt=\"{$row['supplier_name']}\">
-							<a class=\"supplierLink\" href=\"{$row['supplier_url']}\">{$row['supplier_name']}</a>
+							<a class=\"supplierLink\" href=\"admin/supplier_details.php?id={$row['supplier_id']}\">{$row['supplier_name']}</a>
 						</li>";
 					}
 				}

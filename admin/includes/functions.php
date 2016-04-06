@@ -1,11 +1,11 @@
 <?php 
 
-function addDrink($img, $title, $size, $case, $price, $comp, $cat, $info){
+function addDrink($img, $title, $size, $case, $price, $comp, $cat, $info, $spec){
 	include('connect.php');
 	if($_FILES['image']["type"]== "image/jpeg" || $_FILES['image']['type']=="image/jpg") {
 		$targetpath = "../images/{$img}";
 		if(move_uploaded_file($_FILES['image']['tmp_name'], $targetpath)) {
-			$qstring = "INSERT INTO tbl_drink VALUES (NULL, '{$title}', '{$size}', '{$case}', '{$price}', '{$img}', '{$cat}', '{$info}', '{$comp}')";
+			$qstring = "INSERT INTO tbl_drink VALUES (NULL, '{$title}', '{$size}', '{$case}', '{$price}', '{$img}', '{$cat}', '{$info}', '{$comp}', '{$spec}')";
 			$result = mysqli_query($link, $qstring);
 			if($result) {
 					redirect_to("admin_index.php");
@@ -18,12 +18,12 @@ function addDrink($img, $title, $size, $case, $price, $comp, $cat, $info){
 	mysqli_close($link);
 }
 
-function addSup($img, $title, $url){
+function addSup($img, $title, $info, $agent){
 	include('connect.php');
 	if($_FILES['supImage']["type"]== "image/jpeg" || $_FILES['supImage']['type']=="image/jpg"){
 		$tarpath = "../images/{$img}";
 		if(move_uploaded_file($_FILES['supImage']['tmp_name'], $tarpath)) {
-			$string = "INSERT INTO tbl_supplier VALUES (NULL, '{$img}' , '{$title}' , '{$url}')";
+			$string = "INSERT INTO tbl_supplier VALUES (NULL, '{$img}' , '{$title}' , '{$agent}' , '{$info}')";
 			$res = mysqli_query($link, $string);
 			if($res) {
 				redirect_to("admin_index.php");
