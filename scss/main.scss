@@ -178,10 +178,9 @@ iframe{
 .suppliers{
 	
 		li{
-			text-align: center;
 
 			img{
-			margin-bottom: $pad10;
+			margin-bottom: $pad20;
 			margin-top: $pad20;
 			}
 
@@ -195,6 +194,14 @@ iframe{
 		}
 
 
+}
+
+.supplierLink{
+	color: $maroon;
+	font-family: $droid;
+	padding-top: $pad20;
+	font-size: 12px;
+	padding-right: 20px;
 }
 
 .conTitle{
@@ -300,6 +307,12 @@ iframe{
 		color: $maroon;
 		font-size: 12px;
 		margin-bottom: $pad5;
+	}
+	a{
+		color: $maroon;
+		&:hover{
+			color: $orange;
+		}
 	}
 }
 
@@ -509,6 +522,23 @@ iframe{
 	}
 	margin-top: $pad30;
 
+}
+
+.details{
+	padding-top: $pad20;
+	h2{
+		font-size: $pad20;
+		font-family: $droid;
+		color: $maroon;
+		padding-bottom: $pad10;
+	}
+	p{
+		font-family: $droid;
+		color: $black;
+		font-size: 13px;
+		line-height: 16px;
+		padding-top: $pad10;
+	}
 }
 
 // Footer

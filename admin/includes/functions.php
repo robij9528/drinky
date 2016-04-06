@@ -74,8 +74,8 @@ function addAdmin($username, $email, $password){
 
 function search($search_term){
 	include('connect.php');
-	$sql = "SELECT * FROM tbl_drink WHERE drink_title = '{$search_term}' OR drink_type = '{$search_term}'";
-	echo $sql;
+	$sql = "SELECT * FROM tbl_drink WHERE drink_title LIKE '{$search_term}%' OR drink_type LIKE '{$search_term}%'";
+	// echo $sql;
 	$run = mysqli_query($link, $sql);
 	if ($run) {
 		return $run;
@@ -90,7 +90,7 @@ function search($search_term){
 function filterDrink($filter){
 	include('connect.php');
 	$filterquery = "SELECT * FROM tbl_drink WHERE drink_type  = '{$filter}'";
-	echo $filterquery;
+	// echo $filterquery;
 	$run = mysqli_query($link, $filterquery);
 	if ($run) {
 		return $run;

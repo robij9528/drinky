@@ -7,7 +7,7 @@ if (isset($_POST['search'])){
 	$getDrink = search($search_term);
 }
 
-if (isset($_GET['filter'])) {
+else if (isset($_GET['filter'])) {
 	$filter = $_GET['filter'];
 	$getDrink = filterDrink($filter);
 }
@@ -134,7 +134,7 @@ else{
 								}
 
 								echo "...</p>";
-								echo "<a href=\"#\">More</a>";
+								echo "<a href=\"admin/drink_details.php?id={$row['drink_id']}\">More</a>";
 								// echo "
 								// <p>{$row['drink_info']}</p>";
 						echo "
@@ -149,7 +149,7 @@ else{
 									<option>4</option>			
 									<option>5</option>											
 								</select>
-								<input class=\"buttEdit\" type=\"button\" value=\"More Info\">
+								<a href=\"admin/drink_details.php?id={$row['drink_id']}\"><input class=\"buttEdit\" type=\"button\" value=\"More Info\"></a>
 								<input class=\"buttEdit\" type=\"button\" value=\"Add to Cart\">	
 							</div>
 						</div>

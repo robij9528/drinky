@@ -151,7 +151,7 @@ if(isset($_POST['submit'])) {
 
 
 
-<section class="footer footerhelp">
+<section class="footer">
 	
 	<footer>Drinky &copy; 2016</footer>
 

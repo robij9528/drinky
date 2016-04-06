@@ -19,4 +19,17 @@
 		}
 	}
 
+
+	function getSingle($tbl, $col, $id){
+		include('connect.php');
+		$querySingle = "SELECT * FROM {$tbl} WHERE {$col} = {$id}";
+		$run = mysqli_query($link, $querySingle);
+		if($run){
+			return $run;
+		}else{
+			$error =  "There was an error accessing this information.  Please contact your admin.";
+			return $error;			
+		}
+	}
+
  ?>
