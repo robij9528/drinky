@@ -1,3 +1,10 @@
+<?php
+
+	require_once('includes/init.php');
+	confirm_logged_in();
+
+ ?>
+
 <html>
 <head>
 	<meta charset="utf-8">

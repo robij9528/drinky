@@ -73,8 +73,8 @@ if(isset($_GET['id'])){
 
 	if(!is_string($getSingle)){
 		$row = mysqli_fetch_array($getSingle);
-		echo "<img class=\"small-12 large-2 columns\" src=\"../images/{$row['drink_img']}\" alt=\"{$row['drink_title']}\">
-		<div class=\"small-12 large-8 columns\">
+		echo "<img class=\"small-4 large-2 columns\" src=\"../images/{$row['drink_img']}\" alt=\"{$row['drink_title']}\">
+		<div class=\"small-8 large-8 columns\">
 			<h2>{$row['drink_title']}</h2>";
 		echo "<p>";			
 		echo nl2br("{$row['drink_info']}");

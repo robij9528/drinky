@@ -96,14 +96,17 @@ iframe {
   margin-top: 20px;
   margin-bottom: 10px; }
 
-.suppliers li img {
-  margin-bottom: 20px;
-  margin-top: 20px; }
-.suppliers li a {
-  color: #3c0017;
-  font-family: "Droid Serif", serif; }
-  .suppliers li a:hover {
-    text-decoration: underline; }
+.suppliers {
+  width: 100%; }
+  .suppliers li img {
+    margin-bottom: 20px;
+    margin-top: 20px; }
+  .suppliers li a {
+    color: #3c0017;
+    font-family: "Droid Serif", serif;
+    text-align: center; }
+    .suppliers li a:hover {
+      text-decoration: underline; }
 
 .supplierLink {
   color: #3c0017;
@@ -239,11 +242,12 @@ iframe {
   color: #3c0017;
   font-family: "Droid Serif", serif;
   font-weight: 700;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  padding-top: 10px; }
 .about p {
   color: #3c0017;
   font-family: "Droid Serif", serif;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
   line-height: 20px;
   font-size: 12px; }
 .about ul li {

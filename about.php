@@ -101,8 +101,8 @@ $getstaff = getAll($tbl);
 			echo "
 				<div class=\"small-12 large-12 columns\">
 					<div class=\"row\">
-						<img class=\"small-6 large-3 columns small-centered large-uncentered\" src=\"images/{$row['staff_img']}\" alt=\"{$row['staff_name']}\">
-						<div class=\"small-12 large-9 columns profile\">
+						<img class=\"small-3 large-3 columns small-centered large-uncentered\" src=\"images/{$row['staff_img']}\" alt=\"{$row['staff_name']}\">
+						<div class=\"small-9 large-9 columns profile\">
 							<h3>{$row['staff_name']}</h3>
 							<p>{$row['staff_info']}</p>			
 						</div>

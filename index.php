@@ -23,6 +23,7 @@ $getSupp = getAll($tbl);
 
         <!-- Mobile Nav-->
     <div class="row">
+    	<h2 class="hidden">Mobile Nav</h2>
       <div class="contain-to-grid show-for-small-only mobilebarEdit ">
         <nav class="top-bar" data-topbar>
            <ul class="title-area">
@@ -45,7 +46,9 @@ $getSupp = getAll($tbl);
 
 <header class="topBar">
 	<div class="row">
+		<h2 class="hidden">Nav</h2>
 		<div class="small-3 large-2 columns">
+			<h2 class="hidden">Logo</h2>
 			<img class="logoSmall" src="images/drinky_logo_word.svg" alt="logo">
 		</div>
 		<nav class="show-for-medium-up large-5 columns">
@@ -123,7 +126,7 @@ $getSupp = getAll($tbl);
 
 	<div class=" small-12 large-12 columns">
 	
-		<ul class="suppilers small-block-grid-4 large-block-grid-6">
+		<ul class="suppilers small-block-grid-4 large-block-grid-6 text-center">
 			<?php 
 				if(!is_string($getSupp)){
 					while($row = mysqli_fetch_array($getSupp)){

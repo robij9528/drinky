@@ -176,8 +176,9 @@ iframe{
 }
 
 .suppliers{
-	
+		width: 100%;
 		li{
+
 
 			img{
 			margin-bottom: $pad20;
@@ -187,6 +188,7 @@ iframe{
 			a{
 			color: $maroon;
 			font-family: $droid;
+			text-align: center;
 				&:hover{
 					text-decoration: underline;
 				}
@@ -380,11 +382,12 @@ iframe{
 		font-family: $droid;
 		font-weight: $weight700;
 		margin-bottom: $pad5;
+		padding-top: $pad10;
 	}
 	p{
 		color: $maroon;
 		font-family: $droid;
-		margin-bottom: $pad5;
+		padding-bottom: $pad5;
 		line-height: $pad20;
 		font-size: 12px;
 	}
